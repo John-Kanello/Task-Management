@@ -1,460 +1,0 @@
-[1;31m
-Start test 1[0m
-	[0;34m
-4[0m[0;34m  .   ____          _            __ _ _
-5[0m[0;34m /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-6[0m[0;34m( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-7[0m[0;34m \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-6[0m[0;34m  '  |____| .__|_| |_|_| |_\__, | / / / /
-5[0m[0;34m =========|_|==============|___/=/_/_/_/
-7[0m[0;34m :: Spring Boot ::                (v3.2.0)
-[0m[0;34m
-ë[0m[0;34m2025-03-20T23:01:26.157+02:00  INFO 16960 --- [    Test worker] taskmanagement.Application               : Starting Application using Java 21.0.2 with PID 16960 (started by johnt in C:\Users\johnt\IdeaProjects\Task Management System\Task Management System\task)
-∫[0m[0;34m2025-03-20T23:01:26.161+02:00  INFO 16960 --- [    Test worker] taskmanagement.Application               : No active profile set, falling back to 1 default profile: "default"
-≤[0m[0;34m2025-03-20T23:01:27.408+02:00  INFO 16960 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-Ã[0m[0;34m2025-03-20T23:01:27.489+02:00  INFO 16960 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 3 JPA repository interfaces.
-ü[0m[0;34m2025-03-20T23:01:28.778+02:00  INFO 16960 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-ê[0m[0;34m2025-03-20T23:01:28.792+02:00  INFO 16960 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-ß[0m[0;34m2025-03-20T23:01:28.792+02:00  INFO 16960 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
-©[0m[0;34m2025-03-20T23:01:28.867+02:00  INFO 16960 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-∂[0m[0;34m2025-03-20T23:01:28.868+02:00  INFO 16960 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2651 ms
-ë[0m[0;34m2025-03-20T23:01:29.067+02:00  INFO 16960 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-¿[0m[0;34m2025-03-20T23:01:29.394+02:00  INFO 16960 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:../tms_db user=SA
-ñ[0m[0;34m2025-03-20T23:01:29.397+02:00  INFO 16960 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-Ã[0m[0;34m2025-03-20T23:01:29.409+02:00  INFO 16960 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../tms_db'
-∞[0m[0;34m2025-03-20T23:01:29.685+02:00  INFO 16960 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-®[0m[0;34m2025-03-20T23:01:29.829+02:00  INFO 16960 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
-ù[0m[0;34m2025-03-20T23:01:29.922+02:00  INFO 16960 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-Æ[0m[0;34m2025-03-20T23:01:30.346+02:00  INFO 16960 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-È[0m[0;34m2025-03-20T23:01:31.479+02:00  INFO 16960 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-∫[0m[0;34m2025-03-20T23:01:31.553+02:00  INFO 16960 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-π[0m[0;34m2025-03-20T23:01:31.944+02:00  INFO 16960 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-Æ[0m[0;34m2025-03-20T23:01:32.629+02:00  WARN 16960 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-¨[0m[0;34m2025-03-20T23:01:33.344+02:00  INFO 16960 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-ä
-[0m[0;34m2025-03-20T23:01:33.467+02:00  INFO 16960 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1435b17, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b3b25ad, org.springframework.security.web.context.SecurityContextHolderFilter@3ce34b92, org.springframework.security.web.header.HeaderWriterFilter@2cc3df02, org.springframework.web.filter.CorsFilter@f507d33, org.springframework.security.web.authentication.logout.LogoutFilter@7d6b0636, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@6f2a13c7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3905229, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62325b44, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3872c85f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1fc02a84, org.springframework.security.web.session.SessionManagementFilter@2116e9cf, org.springframework.security.web.access.ExceptionTranslationFilter@43376a03, org.springframework.security.web.access.intercept.AuthorizationFilter@5a95090a]
-Æ[0m[0;34m2025-03-20T23:01:34.035+02:00  INFO 16960 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-∑[0m[0;34m2025-03-20T23:01:34.046+02:00  INFO 16960 --- [    Test worker] taskmanagement.Application               : Started Application in 8.366 seconds (process running for 9.613)
-¨[0;34m2025-03-20T23:01:34.445+02:00  INFO 16960 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-ü[0m[0;34m2025-03-20T23:01:34.446+02:00  INFO 16960 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-ó[0m[0;34m2025-03-20T23:01:34.449+02:00  INFO 16960 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-†[0m[0;34m2025-03-20T23:01:34.523+02:00  WARN 16960 --- [nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/accounts' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
-¶[0m[0;34m2025-03-20T23:01:34.549+02:00  WARN 16960 --- [nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/accounts' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-[0m[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-K[0m[0;34mRequest body: {"email":"alice@email.com","password":"password"}
-[0m[0;34m
-[0m[1;31m
-Start test 2[0m
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-K[0m[0;34mRequest body: {"email":"alice@email.com","password":"password"}
-[0m[0;34m
-[0m[1;31m
-Start test 3[0m
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-K[0m[0;34mRequest body: {"email":"ALICE@email.com","password":"password"}
-[0m[0;34m
-[0m[1;31m
-Start test 4[0m
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-I[0m[0;34mRequest body: {"email":"bob@example.com","password":"123456"}
-[0m[0;34m
-[0m[1;31m
-Start test 5[0m
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-=[0m[0;34mRequest body: {"email":" ","password":"password"}
-[0m[0;34m
-[0m[1;31m
-Start test 6[0m
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-1[0m[0;34mRequest body: {"password":"password"}
-[0m[0;34m
-[0m[1;31m
-Start test 7[0m
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-L[0m[0;34mRequest body: {"email":"malformed@email.","password":"password"}
-[0m[0;34m
-[0m[1;31m
-Start test 8[0m
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-3[0m[0;34mRequest body: {"email":"test@test.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 9[0m
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-G[0m[0;34mRequest body: {"email":"test@test.com","password":"      "}
-[0m[0;34m
-[0m[1;31m
-Start test 10[0m
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-F[0m[0;34mRequest body: {"email":"test@test.com","password":"12345"}
-[0m[0;34m
-[0m[1;31m
-Start test 11[0m
-[0;34m
->[0m[0;34mRequest: POST http://localhost:8080/api/auth/token
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 12[0m
-[0;34m
->[0m[0;34mRequest: POST http://localhost:8080/api/auth/token
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 13[0m
-[0;34m
->[0m[0;34mRequest: POST http://localhost:8080/api/auth/token
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 14[0m
-[0;34m
->[0m[0;34mRequest: POST http://localhost:8080/api/auth/token
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 15[0m
-[0;34m
-9[0m[0;34mRequest: POST http://localhost:8080/api/tasks
-K[0m[0;34mRequest body: {"title":"title 1","description":"description 1"}
-[0m[0;34m
-[0m[1;31m
-Start test 16[0m
-[0;34m
-9[0m[0;34mRequest: POST http://localhost:8080/api/tasks
-K[0m[0;34mRequest body: {"title":"title 2","description":"description 2"}
-[0m[0;34m
-[0m[1;31m
-Start test 17[0m
-[0;34m
-9[0m[0;34mRequest: POST http://localhost:8080/api/tasks
-K[0m[0;34mRequest body: {"title":"title 3","description":"description 3"}
-[0m[0;34m
-[0m[1;31m
-Start test 18[0m
-¨[0;34m2025-03-20T23:01:35.954+02:00  WARN 16960 --- [io-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `taskmanagement.model.entity.TaskManagementUser` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('bob@example.com')]
-[0;34m
-9[0m[0;34mRequest: POST http://localhost:8080/api/tasks
-p[0m[0;34mRequest body: {"id":"3","description":"description 3","status":"CREATED","author":"bob@example.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 19[0m
-∞[0m[0;34m2025-03-20T23:01:35.964+02:00  WARN 16960 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `taskmanagement.model.entity.TaskManagementUser` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('alice@email.com')]
-[0;34m
-9[0m[0;34mRequest: POST http://localhost:8080/api/tasks
-|[0m[0;34mRequest body: {"id":"1","title":" ","description":"description 1","status":"CREATED","author":"alice@email.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 20[0m
-¨[0;34m2025-03-20T23:01:35.975+02:00  WARN 16960 --- [nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `taskmanagement.model.entity.TaskManagementUser` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('alice@email.com')]
-[0;34m
-9[0m[0;34mRequest: POST http://localhost:8080/api/tasks
-d[0m[0;34mRequest body: {"id":"1","title":"title 1","status":"CREATED","author":"alice@email.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 21[0m
-¨[0;34m2025-03-20T23:01:35.984+02:00  WARN 16960 --- [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `taskmanagement.model.entity.TaskManagementUser` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('alice@email.com')]
-[0;34m
-9[0m[0;34mRequest: POST http://localhost:8080/api/tasks
-v[0m[0;34mRequest body: {"id":"1","title":"title 1","description":" ","status":"CREATED","author":"alice@email.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 22[0m
-[0;34m
-9[0m[0;34mRequest: POST http://localhost:8080/api/tasks
-Ç[0m[0;34mRequest body: {"id":"1","title":"title 1","description":"description 1","status":"CREATED","author":"alice@email.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 23[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/1/assign
-8[0m[0;34mRequest body: {"assignee":"bob@example.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 24[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/2/assign
-8[0m[0;34mRequest body: {"assignee":"bob@example.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 25[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/1/assign
--[0m[0;34mRequest body: {"assignee":"none"}
-[0m[0;34m
-[0m[1;31m
-Start test 26[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/3/assign
-8[0m[0;34mRequest body: {"assignee":"alice@email.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 27[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/1/assign
-8[0m[0;34mRequest body: {"assignee":"bob@example.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 28[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/1/assign
-V[0m[0;34mRequest body: {"assignee":"4da3197f-5503-46b6-9948-04a8d79804e6@test.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 29[0m
-[0;34m
-I[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/987654321/assign
-8[0m[0;34mRequest body: {"assignee":"bob@example.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 30[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/1/assign
-8[0m[0;34mRequest body: {"assignee":"bob@example.com"}
-[0m[0;34m
-[0m[1;31m
-Start test 31[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/1/status
-2[0m[0;34mRequest body: {"status":"IN_PROGRESS"}
-[0m[0;34m
-[0m[1;31m
-Start test 32[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/2/status
-2[0m[0;34mRequest body: {"status":"IN_PROGRESS"}
-[0m[0;34m
-[0m[1;31m
-Start test 33[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/2/status
-0[0m[0;34mRequest body: {"status":"COMPLETED"}
-[0m[0;34m
-[0m[1;31m
-Start test 34[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/1/status
-0[0m[0;34mRequest body: {"status":"COMPLETED"}
-[0m[0;34m
-[0m[1;31m
-Start test 35[0m
-[0;34m
-H[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/98765432/status
-0[0m[0;34mRequest body: {"status":"COMPLETED"}
-[0m[0;34m
-[0m[1;31m
-Start test 36[0m
-[0;34m
-A[0m[0;34mRequest: PUT http://localhost:8080/api/tasks/1/status
-0[0m[0;34mRequest body: {"status":"COMPLETED"}
-[0m[0;34m
-[0m[1;31m
-Start test 37[0m
-[0;34m
-D[0m[0;34mRequest: POST http://localhost:8080/api/tasks/1/comments
-.[0m[0;34mRequest body: {"text":"comment 1"}
-[0m[0;34m
-[0m[1;31m
-Start test 38[0m
-[0;34m
-D[0m[0;34mRequest: POST http://localhost:8080/api/tasks/1/comments
-.[0m[0;34mRequest body: {"text":"comment 2"}
-[0m[0;34m
-[0m[1;31m
-Start test 39[0m
-[0;34m
-D[0m[0;34mRequest: POST http://localhost:8080/api/tasks/1/comments
-.[0m[0;34mRequest body: {"text":"comment 3"}
-[0m[0;34m
-[0m[1;31m
-Start test 40[0m
-[0;34m
-D[0m[0;34mRequest: POST http://localhost:8080/api/tasks/3/comments
-.[0m[0;34mRequest body: {"text":"comment 4"}
-[0m[0;34m
-[0m[1;31m
-Start test 41[0m
-[0;34m
-D[0m[0;34mRequest: POST http://localhost:8080/api/tasks/3/comments
-.[0m[0;34mRequest body: {"text":"comment 5"}
-[0m[0;34m
-[0m[1;31m
-Start test 42[0m
-[0;34m
-D[0m[0;34mRequest: POST http://localhost:8080/api/tasks/3/comments
-([0m[0;34mRequest body: {"text":"   "}
-[0m[0;34m
-[0m[1;31m
-Start test 43[0m
-[0;34m
-D[0m[0;34mRequest: POST http://localhost:8080/api/tasks/3/comments
-.[0m[0;34mRequest body: {"text":"comment 5"}
-[0m[0;34m
-[0m[1;31m
-Start test 44[0m
-[0;34m
-L[0m[0;34mRequest: POST http://localhost:8080/api/tasks/999558881/comments
-.[0m[0;34mRequest body: {"text":"comment 5"}
-[0m[0;34m
-[0m[1;31m
-Start test 45[0m
-[0;34m
-C[0m[0;34mRequest: GET http://localhost:8080/api/tasks/1/comments
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 46[0m
-[0;34m
-C[0m[0;34mRequest: GET http://localhost:8080/api/tasks/2/comments
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 47[0m
-[0;34m
-C[0m[0;34mRequest: GET http://localhost:8080/api/tasks/3/comments
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 48[0m
-[0;34m
-C[0m[0;34mRequest: GET http://localhost:8080/api/tasks/3/comments
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 49[0m
-[0;34m
-K[0m[0;34mRequest: GET http://localhost:8080/api/tasks/123456789/comments
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 50[0m
-[0;34m
-8[0m[0;34mRequest: GET http://localhost:8080/api/tasks
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 51[0m
-[0;34m
-8[0m[0;34mRequest: GET http://localhost:8080/api/tasks
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 52[0m
-[0;34m
-8[0m[0;34mRequest: GET http://localhost:8080/api/tasks
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 53[0m
-[0;34m
-O[0m[0;34mRequest: GET http://localhost:8080/api/tasks?author=alice@email.com
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 54[0m
-[0;34m
-O[0m[0;34mRequest: GET http://localhost:8080/api/tasks?author=alice@email.com
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 55[0m
-[0;34m
-O[0m[0;34mRequest: GET http://localhost:8080/api/tasks?author=bob@example.com
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 56[0m
-[0;34m
-G[0m[0;34mRequest: GET http://localhost:8080/api/tasks?author=unknown
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 57[0m
-[0;34m
-I[0m[0;34mRequest: GET http://localhost:8080/api/tasks?assignee=unknown
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 58[0m
-[0;34m
-h[0m[0;34mRequest: GET http://localhost:8080/api/tasks?author=alice@email.com&assignee=bob@example.com
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 59[0m
-[0;34m
-h[0m[0;34mRequest: GET http://localhost:8080/api/tasks?author=bob@example.com&assignee=alice@email.com
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 60[0m
-≤[0;34m2025-03-20T23:01:37.438+02:00  INFO 16960 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-õ[0m[0;34m2025-03-20T23:01:37.440+02:00  INFO 16960 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-ô[0m[0;34m2025-03-20T23:01:37.646+02:00  INFO 16960 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-	[0;34m
-4[0m[0;34m  .   ____          _            __ _ _
-5[0m[0;34m /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-6[0m[0;34m( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-7[0m[0;34m \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-6[0m[0;34m  '  |____| .__|_| |_|_| |_\__, | / / / /
-5[0m[0;34m =========|_|==============|___/=/_/_/_/
-7[0m[0;34m :: Spring Boot ::                (v3.2.0)
-[0m[0;34m
-ë[0m[0;34m2025-03-20T23:01:47.790+02:00  INFO 16960 --- [    Test worker] taskmanagement.Application               : Starting Application using Java 21.0.2 with PID 16960 (started by johnt in C:\Users\johnt\IdeaProjects\Task Management System\Task Management System\task)
-∫[0m[0;34m2025-03-20T23:01:47.790+02:00  INFO 16960 --- [    Test worker] taskmanagement.Application               : No active profile set, falling back to 1 default profile: "default"
-≤[0m[0;34m2025-03-20T23:01:48.090+02:00  INFO 16960 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-Ã[0m[0;34m2025-03-20T23:01:48.102+02:00  INFO 16960 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 3 JPA repository interfaces.
-ü[0m[0;34m2025-03-20T23:01:48.220+02:00  INFO 16960 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-ê[0m[0;34m2025-03-20T23:01:48.221+02:00  INFO 16960 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-ß[0m[0;34m2025-03-20T23:01:48.221+02:00  INFO 16960 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
-©[0m[0;34m2025-03-20T23:01:48.250+02:00  INFO 16960 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-µ[0m[0;34m2025-03-20T23:01:48.250+02:00  INFO 16960 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 458 ms
-ë[0m[0;34m2025-03-20T23:01:48.324+02:00  INFO 16960 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-¡[0m[0;34m2025-03-20T23:01:48.342+02:00  INFO 16960 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:file:../tms_db user=SA
-ñ[0m[0;34m2025-03-20T23:01:48.343+02:00  INFO 16960 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-Ã[0m[0;34m2025-03-20T23:01:48.343+02:00  INFO 16960 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../tms_db'
-∞[0m[0;34m2025-03-20T23:01:48.409+02:00  INFO 16960 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-ù[0m[0;34m2025-03-20T23:01:48.414+02:00  INFO 16960 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-Æ[0m[0;34m2025-03-20T23:01:48.420+02:00  INFO 16960 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-È[0m[0;34m2025-03-20T23:01:48.471+02:00  INFO 16960 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-∫[0m[0;34m2025-03-20T23:01:48.480+02:00  INFO 16960 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-Æ[0m[0;34m2025-03-20T23:01:48.733+02:00  WARN 16960 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-¨[0m[0;34m2025-03-20T23:01:48.984+02:00  INFO 16960 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-ã
-[0m[0;34m2025-03-20T23:01:49.022+02:00  INFO 16960 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5bafd971, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56418318, org.springframework.security.web.context.SecurityContextHolderFilter@60c2c500, org.springframework.security.web.header.HeaderWriterFilter@63cb06df, org.springframework.web.filter.CorsFilter@1c382494, org.springframework.security.web.authentication.logout.LogoutFilter@28ee138c, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@27a22ab0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@31e5f3f0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f5d72f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fb2088b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@788c0028, org.springframework.security.web.session.SessionManagementFilter@10e4bfa5, org.springframework.security.web.access.ExceptionTranslationFilter@238bee26, org.springframework.security.web.access.intercept.AuthorizationFilter@caf0e10]
-Æ[0m[0;34m2025-03-20T23:01:49.277+02:00  INFO 16960 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-∑[0m[0;34m2025-03-20T23:01:49.284+02:00  INFO 16960 --- [    Test worker] taskmanagement.Application               : Started Application in 1.52 seconds (process running for 24.852)
-[0m[1;31m
-Start test 61[0m
-¨[0;34m2025-03-20T23:01:49.293+02:00  INFO 16960 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-ü[0m[0;34m2025-03-20T23:01:49.293+02:00  INFO 16960 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-ó[0m[0;34m2025-03-20T23:01:49.294+02:00  INFO 16960 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-†[0m[0;34m2025-03-20T23:01:49.294+02:00  WARN 16960 --- [nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/accounts' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
-¶[0m[0;34m2025-03-20T23:01:49.295+02:00  WARN 16960 --- [nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/accounts' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-[0;34m
-<[0m[0;34mRequest: POST http://localhost:8080/api/accounts
-‹[0m[0;34mRequest body: {"email":"alice@email.com","password":"password","token":"eyJraWQiOiIzODMwNjcyYS00NWMxLTQ2ZTAtYmE2OS1hMDdjOTc0ZjNmMzciLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhbGljZUBlbWFpbC5jb20iLCJleHAiOjE3NDI1MzMyOTUsImlhdCI6MTc0MjUwNDQ5NSwic2NvcGUiOltdfQ.HcbmqOT9ioEJ6VYi0_elgFFNM74gZ1Vy2fzmaThewpTkRI71ZPRMeC_dHrOjNOoAFI_W0L_B9KuK5_LCY9vsWA3bqd3Cpey9KVy14My_ggV93dFCZZKrkSSleTJ_g2EK-dXoDw3ipWA5P9mUTY_MUHqKynu_j102Zz5KI7iUEawdQyiFBXXdAIpH7YHucgFBroodtDwnvr0Ac2_zlazjqKJX2kN66D87MgQM-3JZu_z6UZDJx40y39ab4Dt-DiZG2MCEuHkpx9dF8tgnIfdIpRZjGojTTjRUA9J69HBhq4B54fVIjVoFf_WCloQtymZQnsbla8I_QH1G1KNfFZdodA"}
-[0m[0;34m
-[0m[1;31m
-Start test 62[0m
-[0;34m
->[0m[0;34mRequest: POST http://localhost:8080/api/auth/token
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m[1;31m
-Start test 63[0m
-[0;34m
-8[0m[0;34mRequest: GET http://localhost:8080/api/tasks
-[0m[0;34mRequest body: 
-[0m[0;34m
-[0m
