@@ -1,6 +1,7 @@
 package taskmanagement.controller;
 
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -59,5 +60,22 @@ public class TaskCommentController {
                                 .map(taskCommentMapper::toDto)
                                 .toList()
                 );
+    }
+
+    @DeleteMapping("/comments/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable("id") long id,
+                                             Authentication authentication) {
+        if(!taskCommentService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        TaskComment taskComment = taskCommentService.findById(id)
+                .orElseThrow();
+        String userEmail = authentication.getName();
+        if(!taskComment.getAuthor().equalsIgnoreCase(userEmail)) {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
+        taskCommentService.deleteById(id);
+        return ResponseEntity.ok()
+                .build();
     }
 }
