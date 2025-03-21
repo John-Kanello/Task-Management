@@ -62,19 +62,19 @@ public class TaskCommentController {
                 );
     }
 
-    @DeleteMapping("/comments/{id}")
-    public ResponseEntity<String> deleteById(@PathVariable("id") long id,
+    @DeleteMapping("/comments/{commentId}")
+    public ResponseEntity<String> deleteById(@PathVariable("commentId") long commentId,
                                              Authentication authentication) {
-        if(!taskCommentService.existsById(id)) {
+        if(!taskCommentService.existsById(commentId)) {
             return ResponseEntity.notFound().build();
         }
-        TaskComment taskComment = taskCommentService.findById(id)
+        TaskComment taskComment = taskCommentService.findById(commentId)
                 .orElseThrow();
         String userEmail = authentication.getName();
         if(!taskComment.getAuthor().equalsIgnoreCase(userEmail)) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
-        taskCommentService.deleteById(id);
+        taskCommentService.deleteById(commentId);
         return ResponseEntity.ok()
                 .build();
     }
