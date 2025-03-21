@@ -25,7 +25,7 @@ public class TaskDetails {
     @JoinColumn(name = "task_user_id", nullable = false)
     private TaskManagementUser author;
     private String assignee;
-    @OneToMany(mappedBy = "task")
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TaskComment> comments;
 
     public TaskDetails(String title,

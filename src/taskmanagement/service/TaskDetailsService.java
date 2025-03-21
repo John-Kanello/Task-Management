@@ -56,4 +56,8 @@ public class TaskDetailsService {
         );
         return taskDetailsRepository.save(taskDetails);
     }
+
+    public void deleteById(long id) {
+        taskDetailsRepository.deleteById(id);
+    }
 }

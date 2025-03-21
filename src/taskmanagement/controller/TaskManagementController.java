@@ -118,4 +118,20 @@ public class TaskManagementController {
         return ResponseEntity.ok()
                 .body(taskDetailsMapper.toDto(updatedTaskDetails));
     }
+
+    @DeleteMapping("/{taskId}")
+    public ResponseEntity<String> deleteById(@PathVariable("taskId") long taskId,
+                                             Authentication authentication) {
+        if(!taskDetailsService.existsById(taskId)) {
+            return ResponseEntity.notFound().build();
+        }
+        TaskDetails taskDetails = taskDetailsService.findById(taskId).orElseThrow();
+        String userEmail = authentication.getName();
+        if(!taskDetails.getAuthor().getEmail().equalsIgnoreCase(userEmail)) {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
+        taskDetailsService.deleteById(taskId);
+        return ResponseEntity.ok()
+                .build();
+    }
 }
