@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.bind.annotation.*;
-import taskmanagement.model.Role;
 import taskmanagement.model.dto.request.TaskCommentRequestDto;
 import taskmanagement.model.dto.response.TaskCommentDtoResponse;
 import taskmanagement.model.entity.TaskComment;
@@ -18,8 +17,6 @@ import taskmanagement.util.mapper.TaskCommentMapper;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
-import static taskmanagement.constant.AppConstants.SCOPE_PREFIX;
 
 @RestController
 @RequestMapping("/api/tasks")
