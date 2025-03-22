@@ -72,7 +72,6 @@ public class TaskCommentController {
         }
         TaskComment taskComment = taskCommentService.findById(commentId)
                 .orElseThrow();
-        authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).forEach(System.out::println);
         String userEmail = authentication.getName();
         boolean hasAdminRole = AuthenticationUtils.hasAdminRole(authentication);
         if(!hasAdminRole && !taskComment.getAuthor().equalsIgnoreCase(userEmail)) {
