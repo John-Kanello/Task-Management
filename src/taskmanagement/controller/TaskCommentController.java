@@ -4,17 +4,22 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.bind.annotation.*;
+import taskmanagement.model.Role;
 import taskmanagement.model.dto.request.TaskCommentRequestDto;
 import taskmanagement.model.dto.response.TaskCommentDtoResponse;
 import taskmanagement.model.entity.TaskComment;
 import taskmanagement.model.entity.TaskDetails;
 import taskmanagement.service.TaskCommentService;
 import taskmanagement.service.TaskDetailsService;
-import taskmanagement.util.TaskCommentMapper;
+import taskmanagement.util.AuthenticationUtils;
+import taskmanagement.util.mapper.TaskCommentMapper;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import static taskmanagement.constant.AppConstants.SCOPE_PREFIX;
 
 @RestController
 @RequestMapping("/api/tasks")
@@ -70,8 +75,10 @@ public class TaskCommentController {
         }
         TaskComment taskComment = taskCommentService.findById(commentId)
                 .orElseThrow();
+        authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).forEach(System.out::println);
         String userEmail = authentication.getName();
-        if(!taskComment.getAuthor().equalsIgnoreCase(userEmail)) {
+        boolean hasAdminRole = AuthenticationUtils.hasAdminRole(authentication);
+        if(!hasAdminRole && !taskComment.getAuthor().equalsIgnoreCase(userEmail)) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
         taskCommentService.deleteById(commentId);
