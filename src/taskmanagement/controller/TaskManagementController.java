@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+import taskmanagement.model.Role;
 import taskmanagement.model.dto.request.TaskAssigneeDto;
 import taskmanagement.model.dto.request.TaskDetailsRequestDto;
 import taskmanagement.model.dto.request.TaskStatusDto;
@@ -14,8 +15,9 @@ import taskmanagement.model.entity.TaskDetails;
 import taskmanagement.model.entity.TaskManagementUser;
 import taskmanagement.service.TaskDetailsService;
 import taskmanagement.service.TaskManagementUserService;
-import taskmanagement.util.TaskDetailsMapper;
-import taskmanagement.util.TaskDetailsCommentsMapper;
+import taskmanagement.util.AuthenticationUtils;
+import taskmanagement.util.mapper.TaskDetailsMapper;
+import taskmanagement.util.mapper.TaskDetailsCommentsMapper;
 
 import java.util.List;
 import java.util.Optional;
@@ -91,7 +93,7 @@ public class TaskManagementController {
                 .orElseThrow();
         TaskDetails taskDetails = taskDetailsService.findById(taskId)
                 .orElseThrow();
-        if(user.getId() != taskDetails.getAuthor().getId()) {
+        if(user.getRole() != Role.ADMIN && user.getId() != taskDetails.getAuthor().getId()) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
         taskDetails.setAssignee(assignee);
@@ -110,7 +112,9 @@ public class TaskManagementController {
         TaskDetails taskDetails = taskDetailsService.findById(taskId).orElseThrow();
         String userEmail = authentication.getName();
         TaskManagementUser user = taskManagementUserService.findByEmail(userEmail).orElseThrow();
-        if(user.getId() != taskDetails.getAuthor().getId() && !userEmail.equalsIgnoreCase(taskDetails.getAssignee())) {
+        if(user.getRole() != Role.ADMIN &&
+                user.getId() != taskDetails.getAuthor().getId() &&
+                !userEmail.equalsIgnoreCase(taskDetails.getAssignee())) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
         taskDetails.setStatus(taskStatusDto.status().name());
@@ -127,7 +131,8 @@ public class TaskManagementController {
         }
         TaskDetails taskDetails = taskDetailsService.findById(taskId).orElseThrow();
         String userEmail = authentication.getName();
-        if(!taskDetails.getAuthor().getEmail().equalsIgnoreCase(userEmail)) {
+        boolean hasAdminRole = AuthenticationUtils.hasAdminRole(authentication);
+        if(!hasAdminRole && !taskDetails.getAuthor().getEmail().equalsIgnoreCase(userEmail)) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
         taskDetailsService.deleteById(taskId);
