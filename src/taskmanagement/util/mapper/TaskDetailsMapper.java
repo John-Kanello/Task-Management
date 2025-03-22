@@ -1,4 +1,4 @@
-package taskmanagement.util;
+package taskmanagement.util.mapper;
 
 import org.springframework.stereotype.Component;
 import taskmanagement.model.dto.response.TaskDetailsResponseDto;
