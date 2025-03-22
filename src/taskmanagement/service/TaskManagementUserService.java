@@ -29,7 +29,8 @@ public class TaskManagementUserService {
     public TaskManagementUser save(RegistrationRequest registrationRequest) {
         TaskManagementUser taskManagementUser = new TaskManagementUser(
                 registrationRequest.email(),
-                passwordEncoder.encode(registrationRequest.password())
+                passwordEncoder.encode(registrationRequest.password()),
+                registrationRequest.role()
         );
         return taskManagementUserRepository.save(taskManagementUser);
     }

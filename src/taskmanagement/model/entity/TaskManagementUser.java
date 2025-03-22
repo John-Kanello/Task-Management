@@ -2,6 +2,7 @@ package taskmanagement.model.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import taskmanagement.model.Role;
 
 @NoArgsConstructor
 @Getter
@@ -17,9 +18,11 @@ public class TaskManagementUser {
     @Column(unique = true)
     private String email;
     private String password;
+    private Role role;
 
-    public TaskManagementUser(String email, String password) {
+    public TaskManagementUser(String email, String password, Role role) {
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 }
