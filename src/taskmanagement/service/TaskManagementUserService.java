@@ -6,6 +6,7 @@ import taskmanagement.model.dto.request.RegistrationRequest;
 import taskmanagement.model.entity.TaskManagementUser;
 import taskmanagement.repository.TaskManagementUserRepository;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -30,7 +31,8 @@ public class TaskManagementUserService {
         TaskManagementUser taskManagementUser = new TaskManagementUser(
                 registrationRequest.email(),
                 passwordEncoder.encode(registrationRequest.password()),
-                registrationRequest.role()
+                registrationRequest.role(),
+                new ArrayList<>()
         );
         return taskManagementUserRepository.save(taskManagementUser);
     }

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import taskmanagement.model.Role;
 
+import java.util.List;
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -19,10 +21,13 @@ public class TaskManagementUser {
     private String email;
     private String password;
     private Role role;
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TaskDetails> tasks;
 
-    public TaskManagementUser(String email, String password, Role role) {
+    public TaskManagementUser(String email, String password, Role role, List<TaskDetails> tasks) {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.tasks = tasks;
     }
 }
