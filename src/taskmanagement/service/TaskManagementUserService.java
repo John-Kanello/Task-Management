@@ -19,6 +19,14 @@ public class TaskManagementUserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    public boolean existsById(long id) {
+        return taskManagementUserRepository.existsById(id);
+    }
+
+    public Optional<TaskManagementUser> findById(long id) {
+        return taskManagementUserRepository.findById(id);
+    }
+
     public boolean existsByEmail(String email) {
         return taskManagementUserRepository.existsByEmailIgnoreCase(email);
     }
@@ -35,5 +43,9 @@ public class TaskManagementUserService {
                 new ArrayList<>()
         );
         return taskManagementUserRepository.save(taskManagementUser);
+    }
+
+    public void deleteById(long id) {
+        taskManagementUserRepository.deleteById(id);
     }
 }

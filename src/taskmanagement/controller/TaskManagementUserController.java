@@ -8,13 +8,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import taskmanagement.model.dto.request.RegistrationRequest;
 import taskmanagement.model.dto.response.JwtTokenDto;
+import taskmanagement.model.entity.TaskManagementUser;
 import taskmanagement.service.TaskManagementUserService;
+import taskmanagement.util.AuthenticationUtils;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -54,6 +53,22 @@ public class TaskManagementUserController {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
         taskManagementUserService.save(registrationRequest);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/users/{userId}")
+    public ResponseEntity<String> deleteById(@PathVariable("userId") long userId,
+                                             Authentication authentication) {
+        if(!taskManagementUserService.existsById(userId)) {
+            return ResponseEntity.notFound().build();
+        }
+        TaskManagementUser taskManagementUser = taskManagementUserService.findById(userId)
+                .orElseThrow();
+        boolean hasAdminRole = AuthenticationUtils.hasAdminRole(authentication);
+        if(!hasAdminRole && taskManagementUser.getId() != userId) {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
+        taskManagementUserService.deleteById(userId);
         return ResponseEntity.ok().build();
     }
 }
