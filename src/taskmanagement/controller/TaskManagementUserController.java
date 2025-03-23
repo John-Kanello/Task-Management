@@ -62,10 +62,10 @@ public class TaskManagementUserController {
         if(!taskManagementUserService.existsById(userId)) {
             return ResponseEntity.notFound().build();
         }
-        TaskManagementUser taskManagementUser = taskManagementUserService.findById(userId)
-                .orElseThrow();
+        String userEmail = authentication.getName();
+        TaskManagementUser currentUser = taskManagementUserService.findByEmail(userEmail).orElseThrow();
         boolean hasAdminRole = AuthenticationUtils.hasAdminRole(authentication);
-        if(!hasAdminRole && taskManagementUser.getId() != userId) {
+        if(!hasAdminRole && currentUser.getId() != userId) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
         taskManagementUserService.deleteById(userId);
