@@ -22,7 +22,8 @@ This API provides task management functionality where users can create tasks, ad
       ```json
       {
         "email": "user@example.com",
-        "password": "password123"
+        "password": "password123",
+        "role": "USER"
       }
       ```
     - **Response:** 200 OK
@@ -44,8 +45,7 @@ This API provides task management functionality where users can create tasks, ad
       ```json
       {
         "title": "New Task",
-        "description": "Task details",
-        "status": "Pending"
+        "description": "Task details"
       }
       ```
     - **Response:** 200 OK
@@ -84,7 +84,7 @@ This API provides task management functionality where users can create tasks, ad
     - **Request Body:**
       ```json
       {
-        "status": "Completed"
+        "status": "COMPLETED"
       }
       ```
     - **Response:** 200 OK
@@ -109,12 +109,12 @@ This API provides task management functionality where users can create tasks, ad
     - **Response:**
       ```json
       [
-        {
-          "id": 1,
-          "text": "This is a comment.",
-          "author": "user@example.com",
-          "timestamp": "2025-03-23T10:00:00"
-        }
+         {
+           "id": "4",
+           "task_id": "6",
+           "text": "The text",
+           "author": "user@email.com"
+         }
       ]
       ```
 
