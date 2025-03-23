@@ -4,9 +4,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import taskmanagement.model.Role;
 
-import static taskmanagement.constant.AppConstants.SCOPE_PREFIX;
-
 public class AuthenticationUtils {
+    private static final String SCOPE_PREFIX = "SCOPE_";
 
     public static boolean hasAdminRole(Authentication authentication) {
         return authentication.getAuthorities().stream()
