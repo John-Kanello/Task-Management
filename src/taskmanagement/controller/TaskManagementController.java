@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import taskmanagement.model.Role;
+import taskmanagement.model.TaskStatus;
 import taskmanagement.model.dto.request.TaskAssigneeDto;
 import taskmanagement.model.dto.request.TaskDetailsRequestDto;
 import taskmanagement.model.dto.request.TaskStatusDto;
@@ -19,6 +20,7 @@ import taskmanagement.util.AuthenticationUtils;
 import taskmanagement.util.mapper.TaskDetailsMapper;
 import taskmanagement.util.mapper.TaskDetailsCommentsMapper;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -71,8 +73,16 @@ public class TaskManagementController {
             return ResponseEntity.badRequest().build();
         }
         TaskManagementUser taskManagementUser = taskManagementUserOptional.orElseThrow();
-        taskDetailsRequestDto.setAuthor(taskManagementUser);
-        TaskDetails savedTaskDetails = taskDetailsService.save(taskDetailsRequestDto);
+        TaskDetails taskDetails = new TaskDetails(
+                taskDetailsRequestDto.title(),
+                taskDetailsRequestDto.description(),
+                TaskStatus.CREATED.name(),
+                LocalDateTime.now(),
+                taskManagementUser,
+                "none"
+        );
+        taskManagementUser.getTasks().add(taskDetails);
+        TaskDetails savedTaskDetails = taskDetailsService.save(taskDetails);
         return ResponseEntity.ok()
                 .body(taskDetailsMapper.toDto(savedTaskDetails));
     }

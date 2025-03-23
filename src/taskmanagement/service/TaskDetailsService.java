@@ -1,11 +1,9 @@
 package taskmanagement.service;
 
 import org.springframework.stereotype.Service;
-import taskmanagement.model.dto.request.TaskDetailsRequestDto;
 import taskmanagement.model.entity.TaskDetails;
 import taskmanagement.repository.TaskDetailsRepository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,18 +40,6 @@ public class TaskDetailsService {
     }
 
     public TaskDetails save(TaskDetails taskDetails) {
-        return taskDetailsRepository.save(taskDetails);
-    }
-
-    public TaskDetails save(TaskDetailsRequestDto taskDetailsRequestDto) {
-        TaskDetails taskDetails = new TaskDetails(
-                taskDetailsRequestDto.getTitle(),
-                taskDetailsRequestDto.getDescription(),
-                "CREATED",
-                LocalDateTime.now(),
-                taskDetailsRequestDto.getAuthor(),
-                "none"
-        );
         return taskDetailsRepository.save(taskDetails);
     }
 
